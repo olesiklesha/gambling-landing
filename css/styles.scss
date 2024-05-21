@@ -275,21 +275,45 @@ body > * {
 
 .main {
   flex: 1 0 auto;
+
+  &__container {
+    height: 100%;
+    padding-bottom: 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .info {
   // .info__title
+  flex: 0 1 669px;
 
   &__title {
+    font-weight: 500;
+    font-size: clamp(2.875rem, 7vw, 6rem);
+    margin-bottom: 24px;
   }
 
   // .info__subtitle
 
   &__subtitle {
+    font-size: clamp(1.625rem, 2.5vw, 2rem);
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: clamp(24px, 3vw, 48px);
   }
 }
 .highlight {
+  color: $accent;
 }
 .btn {
+  display: block;
+  text-transform: uppercase;
+  background: $accent;
+  border-radius: 48px;
+  padding: 15px 0;
+  font-size: 18px;
+  text-align: center;
+  max-width: 393px;
 }
 .icons {
   // .icons__row
