@@ -1,0 +1,35 @@
+@import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../assets/fonts/FuturaPT-Medium.woff2") format("woff2"),
+    url("../assets/fonts/FuturaPT-Medium.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+$accent: #478bf9;
+$bg: #110a1d;
+
+html {
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+// .test {
+//   font-family: "Futura PT", sans-serif;
+// }
+
+body {
+}
