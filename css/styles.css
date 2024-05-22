@@ -636,7 +636,7 @@ body > * {
   text-transform: uppercase;
 }
 .blog__wrapper {
-  height: 595px;
+  height: clamp(26.312rem, 56vh, 37.1875rem);
   border: 3px solid #478bf9;
   border-radius: 100px;
   padding: 24px;

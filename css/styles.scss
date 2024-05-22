@@ -432,7 +432,7 @@ body > * {
   // .blog__wrapper
 
   &__wrapper {
-    height: 595px;
+    height: clamp(26.312rem, 56vh, 37.1875rem);
     border: 3px solid $accent;
     border-radius: 100px;
     padding: 24px;
