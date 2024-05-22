@@ -457,15 +457,20 @@ body > * {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-}
-.main__container {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.main__container {
+  max-height: calc(100vh - 124px - 129px);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -502,6 +507,123 @@ body > * {
   max-width: 393px;
 }
 
+.icons {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  margin-left: 42px;
+  margin-right: auto;
+}
+.icons__row {
+  width: 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  -webkit-animation: 10s linear 1s infinite alternate slidein;
+          animation: 10s linear 1s infinite alternate slidein;
+}
+.icons__row:nth-child(odd) {
+  -webkit-animation: 10s linear 1s infinite alternate slideinReverse;
+          animation: 10s linear 1s infinite alternate slideinReverse;
+}
+.icons__item {
+  width: 99px;
+  height: 99px;
+}
+.icons__item_large {
+  height: 220px;
+  width: 99px;
+  border: 4px solid #478bf9;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+}
+.icons__item_large::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  border: 4px solid #478bf9;
+  border-radius: 50%;
+  top: -4px;
+  left: -4px;
+  background: url("../assets/icons/world.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icons__row:first-of-type > .icons__item_large::before {
+  background-image: url("../assets/icons/dollar.svg");
+}
+
+.icons__row:nth-of-type(2) .icons__item_m svg path {
+  fill: #fff;
+}
+
+.icons__row:last-of-type .icons__item_soccer svg path {
+  fill: #fff;
+}
+.icons__row:last-of-type .icons__item_m svg path {
+  fill: #478bf9;
+}
+.icons__row:last-of-type > .icons__item_large {
+  border-color: #fff;
+}
+.icons__row:last-of-type > .icons__item_large::before {
+  background-image: url("../assets/icons/crown.svg");
+  border-color: #fff;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+
+@keyframes slidein {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@-webkit-keyframes slideinReverse {
+  from {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  to {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+@keyframes slideinReverse {
+  from {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  to {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
 .blog {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 531px;
