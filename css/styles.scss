@@ -615,7 +615,7 @@ body > * {
   border-bottom: none;
   background: #1e1231;
   position: relative;
-  z-index: -1;
+  z-index: 4;
 
   &__container {
     display: flex;
@@ -664,6 +664,8 @@ body > * {
   gap: 14px;
   text-align: right;
   line-height: 20px;
+  position: relative;
+  z-index: 4;
 
   &__list {
     display: flex;
@@ -739,6 +741,7 @@ stop {
   aspect-ratio: 1/1;
   z-index: 2;
   transform: translateX(150px);
+  pointer-events: none;
 
   img {
     width: 100%;
