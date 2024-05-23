@@ -537,7 +537,7 @@ body > * {
   z-index: 2;
   position: absolute;
   left: 0;
-  top: 26%;
+  bottom: 15%;
   width: 100%;
   height: calc(100vh - 124px - 129px);
   background: rgb(17, 10, 29);
