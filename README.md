@@ -1,1 +1,1 @@
-https://app.netlify.com/sites/gambling-landing/configuration/general
+https://gambling-landing.netlify.app/
