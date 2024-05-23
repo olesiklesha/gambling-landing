@@ -297,14 +297,14 @@ body > * {
 
   &__title {
     font-weight: 500;
-    font-size: clamp(2.875rem, 7vw, 6rem);
+    font-size: clamp(46px, 5vw, 96px);
     margin-bottom: 24px;
   }
 
   // .info__subtitle
 
   &__subtitle {
-    font-size: clamp(1.625rem, 2.5vw, 2rem);
+    font-size: clamp(20px, 1.67vw, 32px);
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: clamp(24px, 3vw, 48px);
   }
@@ -329,6 +329,29 @@ body > * {
   gap: clamp(8px, 0.85vw, 16px);
   margin-left: 42px;
   margin-right: auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    height: calc(100vh - 124px - 129px);
+    background: rgb(17, 10, 29);
+    background: linear-gradient(
+      0deg,
+      rgba(17, 10, 29, 1) 0%,
+      rgba(17, 10, 29, 1) 10%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    @media (max-width: 1010px) {
+      height: calc(100vh - 68px - 129px);
+    }
+  }
 
   &__row {
     width: clamp(50px, 5.5vw, 99px);
@@ -524,9 +547,8 @@ body > * {
     }
 
     &::-webkit-scrollbar-track {
-      margin-top: 72px;
-      margin-bottom: 72px;
-      margin-right: 16px;
+      margin-top: clamp(36px, 3.3vw, 72px);
+      margin-bottom: clamp(36px, 3.3vw, 72px);
       background-color: #fff;
       background: rgba(255, 255, 255, 0.12);
       border-radius: 4px;
