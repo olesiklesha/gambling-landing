@@ -475,6 +475,11 @@ body > * {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 1011px) {
+  .main__container {
+    max-height: calc(100vh - 68px - 129px);
+  }
+}
 
 .info {
   -webkit-box-flex: 0;
@@ -512,12 +517,12 @@ body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 16px;
+  gap: clamp(8px, 0.85vw, 16px);
   margin-left: 42px;
   margin-right: auto;
 }
 .icons__row {
-  width: 99px;
+  width: clamp(50px, 5.5vw, 99px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -525,21 +530,37 @@ body > * {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 24px;
+  gap: clamp(14px, 1.9vw, 36px);
   -webkit-animation: 10s linear 1s infinite alternate slidein;
           animation: 10s linear 1s infinite alternate slidein;
+  position: relative;
+}
+.icons__row::before {
+  content: "";
+  display: block;
+  width: calc(100% + 2px);
+  height: 100%;
+  background: rgba(17, 10, 29, 0.3);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -1px;
 }
 .icons__row:nth-child(odd) {
   -webkit-animation: 10s linear 1s infinite alternate slideinReverse;
           animation: 10s linear 1s infinite alternate slideinReverse;
 }
 .icons__item {
-  width: 99px;
-  height: 99px;
+  width: clamp(50px, 5.5vw, 99px);
+  height: clamp(50px, 5.5vw, 99px);
+}
+.icons__item > svg {
+  width: 100%;
+  height: 100%;
 }
 .icons__item_large {
-  height: 220px;
-  width: 99px;
+  height: clamp(110px, 14vw, 220px);
+  width: clamp(50px, 5.5vw, 99px);
   border: 4px solid #478bf9;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -550,8 +571,8 @@ body > * {
   content: "";
   display: block;
   position: absolute;
-  width: 99px;
-  height: 99px;
+  width: clamp(50px, 5.5vw, 99px);
+  height: clamp(50px, 5.5vw, 99px);
   border: 4px solid #478bf9;
   border-radius: 50%;
   top: -4px;
@@ -559,8 +580,23 @@ body > * {
   background: url("../assets/icons/world.svg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 88%;
 }
 
+.icons__row:first-of-type {
+  position: relative;
+}
+.icons__row:first-of-type::before {
+  content: "";
+  display: block;
+  width: calc(100% + 2px);
+  height: 100%;
+  background: rgba(17, 10, 29, 0.65);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -1px;
+}
 .icons__row:first-of-type > .icons__item_large::before {
   background-image: url("../assets/icons/dollar.svg");
 }
@@ -568,7 +604,13 @@ body > * {
 .icons__row:nth-of-type(2) .icons__item_m svg path {
   fill: #fff;
 }
+.icons__row:nth-of-type(2) .icons__item_large::before {
+  background-size: cover;
+}
 
+.icons__row:last-of-type::before {
+  background: rgba(17, 10, 29, 0.45);
+}
 .icons__row:last-of-type .icons__item_soccer svg path {
   fill: #fff;
 }
@@ -624,10 +666,53 @@ body > * {
             transform: translateY(-10%);
   }
 }
+@media (max-width: 1011px) {
+  @-webkit-keyframes slidein {
+    from {
+      -webkit-transform: translateY(-3%);
+              transform: translateY(-3%);
+    }
+    to {
+      -webkit-transform: translateY(3%);
+              transform: translateY(3%);
+    }
+  }
+  @keyframes slidein {
+    from {
+      -webkit-transform: translateY(-3%);
+              transform: translateY(-3%);
+    }
+    to {
+      -webkit-transform: translateY(3%);
+              transform: translateY(3%);
+    }
+  }
+  @-webkit-keyframes slideinReverse {
+    from {
+      -webkit-transform: translateY(3%);
+              transform: translateY(3%);
+    }
+    to {
+      -webkit-transform: translateY(-3%);
+              transform: translateY(-3%);
+    }
+  }
+  @keyframes slideinReverse {
+    from {
+      -webkit-transform: translateY(3%);
+              transform: translateY(3%);
+    }
+    to {
+      -webkit-transform: translateY(-3%);
+              transform: translateY(-3%);
+    }
+  }
+}
 .blog {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 531px;
           flex: 0 1 531px;
+  margin-left: 16px;
 }
 .blog__title {
   font-size: 40px;
