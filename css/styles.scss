@@ -99,11 +99,15 @@ body > * {
   // .menu__item
 
   &__item {
+    &:hover > .menu__link {
+      color: $accent;
+    }
   }
 
   // .menu__link
 
   &__link {
+    transition: all 0.3s ease 0s;
     line-height: 20px;
   }
 }
@@ -115,7 +119,6 @@ body > * {
   align-items: center;
 
   &__item {
-    // .btns__item_local
     border: 2px solid #9dadf2;
     border-radius: 24px;
     display: flex;
@@ -125,6 +128,21 @@ body > * {
     text-transform: uppercase;
     line-height: 20px;
     gap: 8px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: $accent;
+    }
+
+    // .btns__item_local
+    &_local {
+      background: transparent;
+      color: #fff;
+      font-family: "Lexend", sans-serif;
+      font-size: 16px;
+      line-height: 16px;
+      cursor: pointer;
+    }
 
     @media (max-width: 1011px) {
       padding: 6px;
@@ -133,6 +151,11 @@ body > * {
     &:last-child {
       border-color: $accent;
       background: $accent;
+
+      &:hover {
+        background: transparent;
+        color: #fff;
+      }
     }
   }
 }
@@ -301,6 +324,8 @@ body > * {
 .info {
   // .info__title
   flex: 0 1 669px;
+  position: relative;
+  z-index: 4;
 
   &__title {
     font-weight: 500;
@@ -323,11 +348,18 @@ body > * {
   display: block;
   text-transform: uppercase;
   background: $accent;
+  border: 2px solid $accent;
   border-radius: 48px;
   padding: 15px 0;
   font-size: 18px;
   text-align: center;
   max-width: 393px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background: transparent;
+  }
 }
 .icons {
   // .icons__row
@@ -641,9 +673,17 @@ body > * {
   // .footer-menu__item
 
   &__item {
+    &:hover > .footer-menu__link {
+      color: $accent;
+    }
+
     &:first-child {
       color: $accent;
       text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
 
       & > .footer-menu__link {
         color: $accent;
@@ -655,6 +695,7 @@ body > * {
 
   &__link {
     cursor: pointer;
+    transition: all 0.3s ease 0s;
   }
 }
 .socials {
