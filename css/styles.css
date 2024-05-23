@@ -721,15 +721,37 @@ body > * {
   text-transform: uppercase;
 }
 .blog__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: clamp(26.312rem, 56vh, 37.1875rem);
   border: 3px solid #478bf9;
   border-radius: 100px;
-  padding: 24px;
+  padding: 24px 0 24px 24px;
   background: rgba(255, 255, 255, 0.12);
-  overflow-y: auto;
 }
-.blog__wrapper::-webkit-scrollbar {
+.blog__wrapper .plug {
+  -ms-flex-preferred-size: 16px;
+      flex-basis: 16px;
+}
+.blog__items {
+  overflow-y: auto;
+  padding-right: 16px;
+}
+.blog__items::-webkit-scrollbar {
   width: 8px;
+}
+.blog__items::-webkit-scrollbar-track {
+  margin-top: 72px;
+  margin-bottom: 72px;
+  margin-right: 16px;
+  background-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+.blog__items::-webkit-scrollbar-thumb {
+  background: #478bf9;
+  border-radius: 4px;
 }
 .item-blog {
   display: block;

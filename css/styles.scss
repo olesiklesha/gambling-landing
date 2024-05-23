@@ -502,24 +502,38 @@ body > * {
   // .blog__wrapper
 
   &__wrapper {
+    display: flex;
     height: clamp(26.312rem, 56vh, 37.1875rem);
     border: 3px solid $accent;
     border-radius: 100px;
-    padding: 24px;
+    padding: 24px 0 24px 24px;
     background: rgba(255, 255, 255, 0.12);
+
+    .plug {
+      flex-basis: 16px;
+    }
+  }
+
+  &__items {
     overflow-y: auto;
+    padding-right: 16px;
 
     &::-webkit-scrollbar {
       width: 8px;
     }
 
     &::-webkit-scrollbar-track {
-      // box-shadow: 0 0 6px rgba(247, 247, 247, 0.3);
+      margin-top: 72px;
+      margin-bottom: 72px;
+      margin-right: 16px;
+      background-color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
-      // width: 8px;
-      // background: $accent;
+      background: $accent;
+      border-radius: 4px;
     }
   }
 
